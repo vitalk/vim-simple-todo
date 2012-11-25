@@ -23,6 +23,8 @@ map ,O O[ ]
 imap ,O <Esc>,O
 " mark item under cursor as done
 map ,x :s/^\(\s*\)\[ \]/\1[x]/<CR>
+imap ,x <Esc>,x
 " mark as undone
 map ,X :s/^\(\s*\)\[x\]/\1[ ]/<CR>
+imap ,X <Esc>,X
 " }}}
