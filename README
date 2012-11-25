@@ -1,0 +1,39 @@
+VIM-SIMPLE-TODO
+
+May be this is the smallest VIM plugin in the world. It adds some useful
+mappings for manage simple TODO lists (example below) and nothing more.
+
+INSTALL
+
+Use your favorite installation method, but I recommend to use
+pathogen (https://github.com/tpope/vim-pathogen) and run:
+
+cd .vim/bundle
+git clone https://github.com/vitalk/vim-simple-todo
+
+USAGE
+
+All this mappings work the same on NORMAL and INSERT modes.
+
+,i      create new todo under cursor
+,o      create new todo below current line
+,O      create new todo above current line
+,x      mark todo under cursor as done
+,X      mark todo as undone
+
+TODO
+
+[x] publish to github
+[ ] add folding
+[ ] add syntax highlighting
+[ ] add start, end timestamp
+
+ISSUES
+
+Does not works properly with some plugins, which modify inserted symbols, such
+as AUTO-PAIRS (https://github.com/vim-scripts/Auto-Pairs). You must temporally
+disable them before use SIMPLE-TODO.
+
+COPY
+
+Copyright © 2012 Vital Kudzelka. Use it for Good not Evil.
