@@ -1,7 +1,7 @@
 " File:          simple-todo.vim
 " Author:        Vital Kudzelka
 " Description:   Add some useful mappings to manage simple TODO list
-" Version:       0.1
+" Version:       0.2
 " Last Modified: December 04, 2012
 
 
