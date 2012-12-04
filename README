@@ -13,7 +13,9 @@ git clone https://github.com/vitalk/vim-simple-todo
 
 USAGE
 
-All this mappings work the same on NORMAL and INSERT modes.
+All this mappings use the <leader> key and they work the same on NORMAL and
+INSERT modes. I prefer to use the coma as the <leader> key but fell free to set
+your own.
 
 ,i      create new todo under cursor
 ,o      create new todo below current line
