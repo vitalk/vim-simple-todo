@@ -6,12 +6,15 @@
 
 
 " Guard {{{
+
 if exists('g:loaded_simple_todo') || &cp
   finish
 endif
 let g:loaded_simple_todo = 1
+
 " }}}
 " Mappings {{{
+
 " create new item
 map  <Leader>i i[ ] 
 imap <Leader>i [ ] 
@@ -27,4 +30,5 @@ imap <Leader>x <Esc>,x
 " mark as undone
 map  <Leader>X :s/^\(\s*\)\[x\]/\1[ ]/<CR>
 imap <Leader>X <Esc>,X
+
 " }}}
