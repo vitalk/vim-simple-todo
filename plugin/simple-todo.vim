@@ -2,7 +2,7 @@
 " Author:        Vital Kudzelka
 " Description:   Add some useful mappings to manage simple TODO list
 " Version:       0.1
-" Last Modified: Nov 25, 2012
+" Last Modified: December 04, 2012
 
 
 " Guard {{{
@@ -13,18 +13,18 @@ let g:loaded_simple_todo = 1
 " }}}
 " Mappings {{{
 " create new item
-map ,i i[ ] 
-imap ,i [ ] 
+map  <Leader>i i[ ] 
+imap <Leader>i [ ] 
 " create new item below
-map ,o o[ ] 
-imap ,o <Esc>,o
+map  <Leader>o o[ ] 
+imap <Leader>o <Esc>,o
 " create new item above
-map ,O O[ ] 
-imap ,O <Esc>,O
+map  <Leader>O O[ ] 
+imap <Leader>O <Esc>,O
 " mark item under cursor as done
-map ,x :s/^\(\s*\)\[ \]/\1[x]/<CR>
-imap ,x <Esc>,x
+map  <Leader>x :s/^\(\s*\)\[ \]/\1[x]/<CR>
+imap <Leader>x <Esc>,x
 " mark as undone
-map ,X :s/^\(\s*\)\[x\]/\1[ ]/<CR>
-imap ,X <Esc>,X
+map  <Leader>X :s/^\(\s*\)\[x\]/\1[ ]/<CR>
+imap <Leader>X <Esc>,X
 " }}}
