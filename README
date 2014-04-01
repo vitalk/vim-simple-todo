@@ -32,9 +32,8 @@ TODO
 
 ISSUES
 
-Does not works properly with some plugins, which modify inserted symbols, such
-as AUTO-PAIRS (https://github.com/vim-scripts/Auto-Pairs). You must temporally
-disable them before use SIMPLE-TODO.
+Don't hesitate to open GitHub Issues (https://github.com/vitalk/vim-simple-todo/issues)
+for any bug or suggestions.
 
 COPY
 
