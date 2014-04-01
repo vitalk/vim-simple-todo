@@ -17,18 +17,18 @@ let g:loaded_simple_todo = 1
 
 " create new item
 nnoremap <Leader>i i[ ] 
-imap <Leader>i [ ] 
+inoremap <Leader>i [ ] 
 " create new item below
 nnoremap <Leader>o o[ ] 
-imap <Leader>o <Esc>,o
+inoremap <Leader>o <Esc>o[ ] 
 " create new item above
 nnoremap <Leader>O O[ ] 
-imap <Leader>O <Esc>,O
+inoremap <Leader>O <Esc>O[ ] 
 " mark item under cursor as done
 nnoremap <Leader>x :s/^\(\s*\)\[ \]/\1[x]/<CR>
-imap <Leader>x <Esc>,x
+inoremap <Leader>x <Esc>:s/^\(\s*\)\[ \]/\1[x]/<CR>
 " mark as undone
 nnoremap <Leader>X :s/^\(\s*\)\[x\]/\1[ ]/<CR>
-imap <Leader>X <Esc>,X
+inoremap <Leader>X <Esc>:s/^\(\s*\)\[x\]/\1[ ]/<CR>
 
 " }}}
