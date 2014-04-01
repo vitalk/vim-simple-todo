@@ -1,7 +1,7 @@
 " File:          simple-todo.vim
 " Author:        Vital Kudzelka
 " Description:   Add some useful mappings to manage simple TODO list
-" Version:       0.2
+" Version:       0.3
 
 
 " Guard {{{
