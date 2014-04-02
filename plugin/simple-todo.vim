@@ -14,20 +14,31 @@ let g:loaded_simple_todo = 1
 " }}}
 " Mappings {{{
 
-" create new item
-nnoremap <Leader>i i[ ] 
-inoremap <Leader>i [ ] 
-" create new item below
-nnoremap <Leader>o o[ ] 
-inoremap <Leader>o <Esc>o[ ] 
-" create new item above
-nnoremap <Leader>O O[ ] 
-inoremap <Leader>O <Esc>O[ ] 
-" mark item under cursor as done
-nnoremap <Leader>x :s/^\(\s*\)\[ \]/\1[x]/<CR>
-inoremap <Leader>x <Esc>:s/^\(\s*\)\[ \]/\1[x]/<CR>
-" mark as undone
-nnoremap <Leader>X :s/^\(\s*\)\[x\]/\1[ ]/<CR>
-inoremap <Leader>X <Esc>:s/^\(\s*\)\[x\]/\1[ ]/<CR>
+" Create a new item
+nnore <Plug>(simple-todo-new) i[ ] 
+inore <Plug>(simple-todo-new) <Esc>i[ ] 
+" Create a new item below
+nnore <Plug>(simple-todo-below) o[ ] 
+inore <Plug>(simple-todo-below) <Esc>o[ ] 
+" Create a new item above
+nnore <Plug>(simple-todo-above) O[ ] 
+inore <Plug>(simple-todo-above) <Esc>O[ ] 
+" Mark item under cursor as done
+nnore <Plug>(simple-todo-mark-as-done) :s/^\(\s*\)\[ \]/\1[x]/<cr>
+inore <Plug>(simple-todo-mark-as-done) <Esc>:s/^\(\s*\)\[ \]/\1[x]/<cr>
+" Mark as undone
+nnore <Plug>(simple-todo-mark-as-undone) :s/^\(\s*\)\[x\]/\1[ ]/<cr>
+inore <Plug>(simple-todo-mark-as-undone) <Esc>:s/^\(\s*\)\[x\]/\1[ ]/<cr>
+
+nmap <Leader>i <Plug>(simple-todo-new)
+imap <Leader>i <Plug>(simple-todo-new)
+nmap <Leader>o <Plug>(simple-todo-below)
+imap <Leader>o <Plug>(simple-todo-below)
+nmap <Leader>O <Plug>(simple-todo-above)
+imap <Leader>O <Plug>(simple-todo-above)
+nmap <Leader>x <Plug>(simple-todo-mark-as-done)
+imap <Leader>x <Plug>(simple-todo-mark-as-done)
+nmap <Leader>X <Plug>(simple-todo-mark-as-undone)
+imap <Leader>X <Plug>(simple-todo-mark-as-undone)
 
 " }}}
