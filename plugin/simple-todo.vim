@@ -15,14 +15,14 @@ let g:loaded_simple_todo = 1
 " Mappings {{{
 
 " Create a new item
-nnore <Plug>(simple-todo-new) i[ ] 
-inore <Plug>(simple-todo-new) <Esc>i[ ] 
+nnore <Plug>(simple-todo-new) i[ ]<space>
+inore <Plug>(simple-todo-new) <Esc>i[ ]<space>
 " Create a new item below
-nnore <Plug>(simple-todo-below) o[ ] 
-inore <Plug>(simple-todo-below) <Esc>o[ ] 
+nnore <Plug>(simple-todo-below) o[ ]<space>
+inore <Plug>(simple-todo-below) <Esc>o[ ]<space>
 " Create a new item above
-nnore <Plug>(simple-todo-above) O[ ] 
-inore <Plug>(simple-todo-above) <Esc>O[ ] 
+nnore <Plug>(simple-todo-above) O[ ]<space>
+inore <Plug>(simple-todo-above) <Esc>O[ ]<space>
 " Mark item under cursor as done
 nnore <Plug>(simple-todo-mark-as-done) :s/^\(\s*\)\[ \]/\1[x]/<cr>
 inore <Plug>(simple-todo-mark-as-done) <Esc>:s/^\(\s*\)\[ \]/\1[x]/<cr>
