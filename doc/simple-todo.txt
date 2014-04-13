@@ -1,0 +1,64 @@
+*simple-todo.txt*   Manage todo lists. Really simple.
+
+Author:     Vital Kudzelka | <vital.kudzelka@gmail.com>
+License:    MIT | http://mit-license.org/vitalk
+
+
+                              Reference manual~
+
+==============================================================================
+Manage todo lists. Really simple.                                *simple-todo*
+
+    1. Intro.................................|simple-todo-into|
+    2. Mappings..............................|simple-todo-maps|
+    3. Contributing..........................|simple-todo-contrib|
+
+==============================================================================
+1. Intro                                                    *simple-todo-into*
+
+Plugin provides handy mappings to manage simple todo lists.
+
+Supported format of todo list is similar to task lists used in GitHub Flavored
+Markdown. Read GitHub blog article for example:
+
+https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments
+
+
+==============================================================================
+2. Mappings                                                 *simple-todo-maps*
+
+Plugin exposes some <Plug> maps. These maps are available for normal and
+insert modes.
+
+To completely disable default key bindings (which is pretty handy) use:
+>
+let g:simple_todo_map_keys = 0
+<
+                                                     *<Plug>(simple-todo-new)*
+<Plug>(simple-todo-new)
+<leader>i                   Create a new item
+
+                                                   *<Plug>(simple-todo-below)*
+<Plug>(simple-todo-below)
+<leader>o                   Create a new item below
+
+                                                   *<Plug>(simple-todo-above)*
+<Plug>(simple-todo-above)
+<leader>O                   Create a new item above
+
+                                            *<Plug>(simple-todo-mark-as-done)*
+<Plug>(simple-todo-mark-as-done)
+<leader>x                   Mark item under cursor as done.
+
+                                          *<Plug>(simple-todo-mark-as-undone)*
+<Plug>(simple-todo-mark-as-undone)
+<leader>X                   Mark item under cursor as undone
+
+==============================================================================
+3. Contributing                                          *simple-todo-contrib*
+
+Don't hesitate to create a new GitHub Issue for any bug or suggestion:
+
+https://github.com/vitalk/vim-simple-todo/issues
+
+vim:tw=78:et:ft=help:norl:
