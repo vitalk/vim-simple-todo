@@ -23,6 +23,18 @@ your own.
 ,x      mark todo under cursor as done
 ,X      mark todo as undone
 
+Or even remap them to somethings more comfortable for you:
+
+# Disable default key bindings
+let g:simple_todo_map_keys = 0
+
+# Map your keys
+nmap <c-i> <Plug>(simple-todo-new)
+imap <c-i> <Plug>(simple-todo-new)
+# ...etc.
+
+See ':help simple-todo-maps' for list of available <Plug> mappings.
+
 TODO
 
 [x] publish to github
