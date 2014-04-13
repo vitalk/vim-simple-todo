@@ -14,7 +14,7 @@ git clone https://github.com/vitalk/vim-simple-todo
 USAGE
 
 All this mappings use the <leader> key and they work the same on NORMAL and
-INSERT modes. I prefer to use the coma as the <leader> key but fell free to set
+INSERT modes. I prefer to use the comma as the <leader> key but fell free to set
 your own.
 
 ,i      create new todo under cursor
