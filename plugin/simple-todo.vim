@@ -34,12 +34,12 @@ nnore <Plug>(simple-todo-above) O[ ]<space>
 inore <Plug>(simple-todo-above) <Esc>O[ ]<space>
 
 " Mark item under cursor as done
-nnore <Plug>(simple-todo-mark-as-done) :s/^\(\s*\)\[ \]/\1[x]/<cr>
-inore <Plug>(simple-todo-mark-as-done) <Esc>:s/^\(\s*\)\[ \]/\1[x]/<cr>
+nnore <Plug>(simple-todo-mark-as-done) :s/^\(\s*[-+*]\?\s*\)\[ \]/\1[x]/<cr>
+inore <Plug>(simple-todo-mark-as-done) <Esc>:s/^\(\s*[-+*]\?\s*\)\[ \]/\1[x]/<cr>
 
 " Mark as undone
-nnore <Plug>(simple-todo-mark-as-undone) :s/^\(\s*\)\[x\]/\1[ ]/<cr>
-inore <Plug>(simple-todo-mark-as-undone) <Esc>:s/^\(\s*\)\[x\]/\1[ ]/<cr>
+nnore <Plug>(simple-todo-mark-as-undone) :s/^\(\s*[-+*]\?\s*\)\[x\]/\1[ ]/<cr>
+inore <Plug>(simple-todo-mark-as-undone) <Esc>:s/^\(\s*[-+*]\?\s*\)\[x\]/\1[ ]/<cr>
 
 if g:simple_todo_map_keys
   nmap <Leader>i <Plug>(simple-todo-new)
