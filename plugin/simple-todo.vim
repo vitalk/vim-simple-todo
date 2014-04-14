@@ -22,8 +22,8 @@ endif
 " Mappings {{{
 
 " Create a new item
-nnore <Plug>(simple-todo-new) i[ ]<space>
-inore <Plug>(simple-todo-new) <Esc>i[ ]<space>
+nnore <Plug>(simple-todo-new) a[ ]<space>
+inore <Plug>(simple-todo-new) [ ]<space>
 
 " Create a new item below
 nnore <Plug>(simple-todo-below) o[ ]<space>
