@@ -26,7 +26,7 @@ fu! s:get_list_marker(linenr) " {{{
 endfu " }}}
 
 " }}}
-" Mappings {{{
+" Public API {{{
 
 " Create a new item
 nnore <Plug>(simple-todo-new) a[ ]<space>
@@ -47,6 +47,9 @@ inore <Plug>(simple-todo-mark-as-done) <Esc>:s/^\(\s*[-+*]\?\s*\)\[ \]/\1[x]/<cr
 " Mark as undone
 nnore <Plug>(simple-todo-mark-as-undone) :s/^\(\s*[-+*]\?\s*\)\[x\]/\1[ ]/<cr>
 inore <Plug>(simple-todo-mark-as-undone) <Esc>:s/^\(\s*[-+*]\?\s*\)\[x\]/\1[ ]/<cr>
+
+" }}}
+" Key bindings {{{
 
 if g:simple_todo_map_keys
   nmap <Leader>i <Plug>(simple-todo-new)
