@@ -19,27 +19,37 @@ if !exists('g:simple_todo_map_keys')
 endif
 
 " }}}
-" Mappings {{{
+" Private functions {{{
+
+fu! s:get_list_marker(linenr) " {{{
+  return substitute(getline(a:linenr), '^\s*\([-+*]\?\s*\).*', '\1', '')
+endfu " }}}
+
+" }}}
+" Public API {{{
 
 " Create a new item
-nnore <Plug>(simple-todo-new) i[ ]<space>
-inore <Plug>(simple-todo-new) <Esc>i[ ]<space>
+nnore <Plug>(simple-todo-new) a[ ]<space>
+inore <Plug>(simple-todo-new) [ ]<space>
 
 " Create a new item below
-nnore <Plug>(simple-todo-below) o[ ]<space>
-inore <Plug>(simple-todo-below) <Esc>o[ ]<space>
+nnore <Plug>(simple-todo-below) o<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space>
+inore <Plug>(simple-todo-below) <Esc>o<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space>
 
 " Create a new item above
-nnore <Plug>(simple-todo-above) O[ ]<space>
-inore <Plug>(simple-todo-above) <Esc>O[ ]<space>
+nnore <Plug>(simple-todo-above) O<c-r>=<SID>get_list_marker(line('.')+1)<cr>[ ]<space>
+inore <Plug>(simple-todo-above) <Esc>O<c-r>=<SID>get_list_marker(line('.')+1)<cr>[ ]<space>
 
 " Mark item under cursor as done
-nnore <Plug>(simple-todo-mark-as-done) :s/^\(\s*\)\[ \]/\1[x]/<cr>
-inore <Plug>(simple-todo-mark-as-done) <Esc>:s/^\(\s*\)\[ \]/\1[x]/<cr>
+nnore <Plug>(simple-todo-mark-as-done) :s/^\(\s*[-+*]\?\s*\)\[ \]/\1[x]/<cr>
+inore <Plug>(simple-todo-mark-as-done) <Esc>:s/^\(\s*[-+*]\?\s*\)\[ \]/\1[x]/<cr>
 
 " Mark as undone
-nnore <Plug>(simple-todo-mark-as-undone) :s/^\(\s*\)\[x\]/\1[ ]/<cr>
-inore <Plug>(simple-todo-mark-as-undone) <Esc>:s/^\(\s*\)\[x\]/\1[ ]/<cr>
+nnore <Plug>(simple-todo-mark-as-undone) :s/^\(\s*[-+*]\?\s*\)\[x\]/\1[ ]/<cr>
+inore <Plug>(simple-todo-mark-as-undone) <Esc>:s/^\(\s*[-+*]\?\s*\)\[x\]/\1[ ]/<cr>
+
+" }}}
+" Key bindings {{{
 
 if g:simple_todo_map_keys
   nmap <Leader>i <Plug>(simple-todo-new)
