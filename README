@@ -3,6 +3,17 @@ VIM-SIMPLE-TODO
 May be this is the smallest VIM plugin in the world. It adds some useful
 mappings for manage simple TODO lists (example below) and nothing more.
 
+[x] Create plugin
+[x] Add help documentation
+[x] Publish to GitHub
+[ ] Spread the word
+
+Plugin supports GitHub-like task lists
+(https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments) as well.
+
+- [x] Support markdown list markers
++ [x] So it's easy to create tasks in issues or pull requests on GitHub
+
 INSTALL
 
 Use your favorite installation method, but I recommend to use
@@ -34,13 +45,6 @@ imap <c-i> <Plug>(simple-todo-new)
 # ...etc.
 
 See ':help simple-todo-maps' for list of available <Plug> mappings.
-
-TODO
-
-[x] publish to github
-[ ] add folding
-[ ] add syntax highlighting
-[ ] add start, end timestamp
 
 ISSUES
 
