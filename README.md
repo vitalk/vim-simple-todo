@@ -31,13 +31,13 @@ All this mappings use the `<leader>` key and they work the same on `NORMAL`
 and `INSERT` modes. I prefer to use the comma as the `<leader>` key but fell
 free to set your own.
 
-| Key | Help                                 |
-|:---:|:-------------------------------------|
-| ,i  | Create a new todo under cursor       |
-| ,o  | Create a new todo below current line |
-| ,O  | Create a new todo above current line |
-| ,x  | Mark todo under cursor as done       |
-| ,X  | Mark todo as undone                  |
+| Key           | Help                                   |
+|:--------------|:---------------------------------------|
+| <kbd>,i</kbd> | Create a new todo under cursor         |
+| <kbd>,o</kbd> | Create a new todo below current line   |
+| <kbd>,O</kbd> | Create a new todo above current line   |
+| <kbd>,x</kbd> | Mark todo under cursor as done         |
+| <kbd>,X</kbd> | Mark todo as undone                    |
 
 Or even remap them to somethings more comfortable for you:
 
