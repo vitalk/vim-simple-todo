@@ -34,7 +34,7 @@ and `INSERT` modes. I prefer to use the comma as the `<leader>` key but fell
 free to set your own.
 
 | Key | Help                                 |
-|-----|--------------------------------------|
+|:---:|:-------------------------------------|
 | ,i  | Create a new todo under cursor       |
 | ,o  | Create a new todo below current line |
 | ,O  | Create a new todo above current line |
