@@ -12,10 +12,8 @@ mappings for manage simple TODO lists (example below) and nothing more.
 
 Plugin supports [GitHub-like task lists](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments) as well.
 
-```
 - [x] Support markdown list markers
 + [x] So it's easy to create tasks in issues or pull requests on GitHub
-```
 
 ## Installation
 
