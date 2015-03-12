@@ -17,13 +17,24 @@ Plugin supports [GitHub-like task lists](https://github.com/blog/1375-task-lists
 
 ## Installation
 
-Use your favorite installation method, but I recommend to use
-[pathogen](https://github.com/tpope/vim-pathogen) and run:
+Use your favorite installation method:
 
-```sh
-cd .vim/bundle
-git clone https://github.com/vitalk/vim-simple-todo
-```
+- Tim Pope's [pathogen](https://github.com/tpope/vim-pathogen):
+
+  ```sh
+  cd .vim/bundle
+  git clone https://github.com/vitalk/vim-simple-todo
+  ```
+
+- Junegunn Choi's [Plug](https://github.com/junegunn/vim-plug) (recommend):
+
+  ```vim
+  Plug 'vitalk/vim-simple-todo'
+  ```
+
+  ```sh
+  vim +PlugInstall +qall
+  ```
 
 ## Usage
 
