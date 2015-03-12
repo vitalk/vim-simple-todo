@@ -39,8 +39,8 @@ Use your favorite installation method:
 ## Usage
 
 All this mappings use the `<leader>` key and they work the same on `NORMAL`
-and `INSERT` modes. I prefer to use the comma as the `<leader>` key but fell
-free to set your own.
+and `INSERT` modes. I prefer to use [the comma](https://github.com/vitalk/sanevi/blob/master/vimrc#L37)
+as the `<leader>` key but fell free to set your own.
 
 | Key           | Help                                   |
 |:--------------|:---------------------------------------|
