@@ -29,7 +29,7 @@ endfu " }}}
 " Public API {{{
 
 " Create a new item
-nnore <Plug>(simple-todo-new) a[ ]<space>
+nnore <Plug>(simple-todo-new) i[ ]<space>
 inore <Plug>(simple-todo-new) [ ]<space>
 
 " Create a new item below
