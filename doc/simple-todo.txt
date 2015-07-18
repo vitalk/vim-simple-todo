@@ -27,16 +27,27 @@ https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments
 ==============================================================================
 2. Mappings                                                 *simple-todo-maps*
 
-Plugin exposes some <Plug> maps. These maps are available for normal and
-insert modes.
+Plugin exposes some <Plug> maps. These maps are available for normal, visual
+and insert modes.
 
 To completely disable default key bindings (which is pretty handy) use:
 >
 let g:simple_todo_map_keys = 0
+
+By default, simple-todo adds mappings for Insert mode. Since the mappings
+start with <Leader> this will cause a slight lag when the <Leader> key (e.g.
+'/' or ',') is pressed. To disable default mappings in Insert mode:
+
+let g:simple_todo_map_insert_mode_keys = 0
+
 <
                                                      *<Plug>(simple-todo-new)*
 <Plug>(simple-todo-new)
 <leader>i                   Create a new item
+
+                                       *<Plug>(simple-todo-new-start-of-line)*
+<Plug>(simple-todo-new-start-of-line)
+<leader>I                   Create a new item at the start of this line
 
                                                    *<Plug>(simple-todo-below)*
 <Plug>(simple-todo-below)
