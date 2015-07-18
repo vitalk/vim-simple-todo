@@ -33,9 +33,9 @@ nnore <Plug>(simple-todo-new) i[ ]<space>
 inore <Plug>(simple-todo-new) [ ]<space>
 
 " Create a new item at the start of this line
-inore <Plug>(simple-todo-new-start-of-line) <Esc>mzI[ ]<space><Esc>`z4la
-nnore <Plug>(simple-todo-new-start-of-line) mzI[ ]<space><Esc>`z4l
-vnore <Plug>(simple-todo-new-start-of-line) I[ ]<space>
+inore <Plug>(simple-todo-new-start-of-line) <Esc>mzI<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space><Esc>`z4la
+nnore <Plug>(simple-todo-new-start-of-line) mzI<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space><Esc>`z4l
+vnore <Plug>(simple-todo-new-start-of-line) I<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space>
 
 " Create a new item below
 nnore <Plug>(simple-todo-below) o<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space>
