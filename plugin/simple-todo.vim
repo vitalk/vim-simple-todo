@@ -18,6 +18,11 @@ if !exists('g:simple_todo_map_keys')
   let g:simple_todo_map_keys = 1
 endif
 
+" Do map insert mode bindings (yes)
+if !exists('g:simple_todo_map_insert_mode_keys')
+  let g:simple_todo_map_insert_mode_keys = 1
+endif
+
 " }}}
 " Private functions {{{
 
@@ -60,19 +65,22 @@ inore <Plug>(simple-todo-mark-as-undone) <Esc>:s/^\(\s*[-+*]\?\s*\)\[x\]/\1[ ]/<
 
 if g:simple_todo_map_keys
   nmap <silent><Leader>i <Plug>(simple-todo-new)
-  imap <silent><Leader>i <Plug>(simple-todo-new)
-  imap <silent><Leader>I <Plug>(simple-todo-new-start-of-line)
   nmap <silent><Leader>I <Plug>(simple-todo-new-start-of-line)
   vmap <silent><Leader>I <Plug>(simple-todo-new-start-of-line)
   nmap <silent><Leader>o <Plug>(simple-todo-below)
-  imap <silent><Leader>o <Plug>(simple-todo-below)
   nmap <silent><Leader>O <Plug>(simple-todo-above)
-  imap <silent><Leader>O <Plug>(simple-todo-above)
   nmap <silent><Leader>x <Plug>(simple-todo-mark-as-done)
   vmap <silent><Leader>x <Plug>(simple-todo-mark-as-done)
-  imap <silent><Leader>x <Plug>(simple-todo-mark-as-done)
   nmap <silent><Leader>X <Plug>(simple-todo-mark-as-undone)
   vmap <silent><Leader>X <Plug>(simple-todo-mark-as-undone)
+endif
+
+if g:simple_todo_map_insert_mode_keys
+  imap <silent><Leader>i <Plug>(simple-todo-new)
+  imap <silent><Leader>I <Plug>(simple-todo-new-start-of-line)
+  imap <silent><Leader>o <Plug>(simple-todo-below)
+  imap <silent><Leader>O <Plug>(simple-todo-above)
+  imap <silent><Leader>x <Plug>(simple-todo-mark-as-done)
   imap <silent><Leader>X <Plug>(simple-todo-mark-as-undone)
 endif
 

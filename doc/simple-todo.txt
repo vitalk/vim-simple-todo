@@ -33,6 +33,13 @@ and insert modes.
 To completely disable default key bindings (which is pretty handy) use:
 >
 let g:simple_todo_map_keys = 0
+
+By default, simple-todo adds mappings for Insert mode. Since the mappings
+start with <Leader> this will cause a slight lag when the <Leader> key (e.g.
+'/' or ',') is pressed. To disable default mappings in Insert mode:
+
+let g:simple_todo_map_insert_mode_keys = 0
+
 <
                                                      *<Plug>(simple-todo-new)*
 <Plug>(simple-todo-new)
