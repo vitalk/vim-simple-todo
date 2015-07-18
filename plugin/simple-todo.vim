@@ -32,6 +32,11 @@ endfu " }}}
 nnore <Plug>(simple-todo-new) a[ ]<space>
 inore <Plug>(simple-todo-new) [ ]<space>
 
+" Create a new item at the start of this line
+inore <Plug>(simple-todo-new-start-of-line) <Esc>mzI[ ]<space><Esc>`z4la
+nnore <Plug>(simple-todo-new-start-of-line) mzI[ ]<space><Esc>`z4l
+vnore <Plug>(simple-todo-new-start-of-line) I[ ]<space>
+
 " Create a new item below
 nnore <Plug>(simple-todo-below) o<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space>
 inore <Plug>(simple-todo-below) <Esc>o<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space>
@@ -56,6 +61,9 @@ inore <Plug>(simple-todo-mark-as-undone) <Esc>:s/^\(\s*[-+*]\?\s*\)\[x\]/\1[ ]/<
 if g:simple_todo_map_keys
   nmap <Leader>i <Plug>(simple-todo-new)
   imap <Leader>i <Plug>(simple-todo-new)
+  imap <Leader>I <Plug>(simple-todo-new-start-of-line)
+  nmap <Leader>I <Plug>(simple-todo-new-start-of-line)
+  vmap <Leader>I <Plug>(simple-todo-new-start-of-line)
   nmap <Leader>o <Plug>(simple-todo-below)
   imap <Leader>o <Plug>(simple-todo-below)
   nmap <Leader>O <Plug>(simple-todo-above)
