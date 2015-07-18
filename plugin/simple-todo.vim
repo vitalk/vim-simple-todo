@@ -29,7 +29,7 @@ endfu " }}}
 " Public API {{{
 
 " Create a new item
-nnore <Plug>(simple-todo-new) a[ ]<space>
+nnore <Plug>(simple-todo-new) i[ ]<space>
 inore <Plug>(simple-todo-new) [ ]<space>
 
 " Create a new item at the start of this line
@@ -59,21 +59,21 @@ inore <Plug>(simple-todo-mark-as-undone) <Esc>:s/^\(\s*[-+*]\?\s*\)\[x\]/\1[ ]/<
 " Key bindings {{{
 
 if g:simple_todo_map_keys
-  nmap <Leader>i <Plug>(simple-todo-new)
-  imap <Leader>i <Plug>(simple-todo-new)
-  imap <Leader>I <Plug>(simple-todo-new-start-of-line)
-  nmap <Leader>I <Plug>(simple-todo-new-start-of-line)
-  vmap <Leader>I <Plug>(simple-todo-new-start-of-line)
-  nmap <Leader>o <Plug>(simple-todo-below)
-  imap <Leader>o <Plug>(simple-todo-below)
-  nmap <Leader>O <Plug>(simple-todo-above)
-  imap <Leader>O <Plug>(simple-todo-above)
-  nmap <Leader>x <Plug>(simple-todo-mark-as-done)
-  vmap <Leader>x <Plug>(simple-todo-mark-as-done)
-  imap <Leader>x <Plug>(simple-todo-mark-as-done)
-  nmap <Leader>X <Plug>(simple-todo-mark-as-undone)
-  vmap <Leader>X <Plug>(simple-todo-mark-as-undone)
-  imap <Leader>X <Plug>(simple-todo-mark-as-undone)
+  nmap <silent><Leader>i <Plug>(simple-todo-new)
+  imap <silent><Leader>i <Plug>(simple-todo-new)
+  imap <silent><Leader>I <Plug>(simple-todo-new-start-of-line)
+  nmap <silent><Leader>I <Plug>(simple-todo-new-start-of-line)
+  vmap <silent><Leader>I <Plug>(simple-todo-new-start-of-line)
+  nmap <silent><Leader>o <Plug>(simple-todo-below)
+  imap <silent><Leader>o <Plug>(simple-todo-below)
+  nmap <silent><Leader>O <Plug>(simple-todo-above)
+  imap <silent><Leader>O <Plug>(simple-todo-above)
+  nmap <silent><Leader>x <Plug>(simple-todo-mark-as-done)
+  vmap <silent><Leader>x <Plug>(simple-todo-mark-as-done)
+  imap <silent><Leader>x <Plug>(simple-todo-mark-as-done)
+  nmap <silent><Leader>X <Plug>(simple-todo-mark-as-undone)
+  vmap <silent><Leader>X <Plug>(simple-todo-mark-as-undone)
+  imap <silent><Leader>X <Plug>(simple-todo-mark-as-undone)
 endif
 
 " }}}
