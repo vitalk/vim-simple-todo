@@ -45,6 +45,7 @@ as the `<leader>` key but fell free to set your own.
 | Key           | Help                                   |
 |:--------------|:---------------------------------------|
 | <kbd>,i</kbd> | Create a new todo under cursor         |
+| <kbd>,I</kbd> | Create a new todo for current line     |
 | <kbd>,o</kbd> | Create a new todo below current line   |
 | <kbd>,O</kbd> | Create a new todo above current line   |
 | <kbd>,x</kbd> | Mark todo under cursor as done         |
