@@ -65,6 +65,11 @@ imap <c-i> <Plug>(simple-todo-new)
 
 See `:help simple-todo-maps` for list of available <Plug> mappings.
 
+You can also change the tick symbol to something else. Default is `x`.
+```vim
+let g:simple_todo_tick_symbol = 'y'
+```
+
 ## Issues
 
 Don't hesitate to open [GitHub Issues](https://github.com/vitalk/vim-simple-todo/issues) for any bug or suggestions.

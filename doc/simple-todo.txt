@@ -11,7 +11,8 @@ Manage todo lists. Really simple.                                *simple-todo*
 
     1. Intro.................................|simple-todo-into|
     2. Mappings..............................|simple-todo-maps|
-    3. Contributing..........................|simple-todo-contrib|
+    3. Customization.........................|simple-todo-customization|
+    4. Contributing..........................|simple-todo-contrib|
 
 ==============================================================================
 1. Intro                                                    *simple-todo-into*
@@ -59,7 +60,16 @@ let g:simple_todo_map_keys = 0
 <leader>X                   Mark item under cursor as undone
 
 ==============================================================================
-3. Contributing                                          *simple-todo-contrib*
+3. Customization                                   *simple-todo-customization*
+
+The default tick symbol `x` can be changed by defining:
+
+>
+let g:simple_todo_tick_symbol = 'y'
+<
+
+==============================================================================
+4. Contributing                                          *simple-todo-contrib*
 
 Don't hesitate to create a new GitHub Issue for any bug or suggestion:
 
