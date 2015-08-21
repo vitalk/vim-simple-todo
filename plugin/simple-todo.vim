@@ -18,6 +18,10 @@ if !exists('g:simple_todo_map_keys')
   let g:simple_todo_map_keys = 1
 endif
 
+if !exists('g:simple_todo_tick_symbol')
+    let g:simple_todo_tick_symbol = 'x'
+endif
+
 " }}}
 " Private functions {{{
 
@@ -46,14 +50,14 @@ nnore <Plug>(simple-todo-above) O<c-r>=<SID>get_list_marker(line('.')+1)<cr>[ ]<
 inore <Plug>(simple-todo-above) <Esc>O<c-r>=<SID>get_list_marker(line('.')+1)<cr>[ ]<space>
 
 " Mark item under cursor as done
-nnore <Plug>(simple-todo-mark-as-done) :s/^\(\s*[-+*]\?\s*\)\[ \]/\1[x]/<cr>
-vnore <Plug>(simple-todo-mark-as-done) :s/^\(\s*[-+*]\?\s*\)\[ \]/\1[x]/<cr>
-inore <Plug>(simple-todo-mark-as-done) <Esc>:s/^\(\s*[-+*]\?\s*\)\[ \]/\1[x]/<cr>
+nnore <Plug>(simple-todo-mark-as-done) :execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:simple_todo_tick_symbol . ']/'<cr>
+vnore <Plug>(simple-todo-mark-as-done) :execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:simple_todo_tick_symbol . ']/'<cr>
+inore <Plug>(simple-todo-mark-as-done) <Esc>:execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:simple_todo_tick_symbol . ']/'<cr>
 
 " Mark as undone
-nnore <Plug>(simple-todo-mark-as-undone) :s/^\(\s*[-+*]\?\s*\)\[x\]/\1[ ]/<cr>
-vnore <Plug>(simple-todo-mark-as-undone) :s/^\(\s*[-+*]\?\s*\)\[x\]/\1[ ]/<cr>
-inore <Plug>(simple-todo-mark-as-undone) <Esc>:s/^\(\s*[-+*]\?\s*\)\[x\]/\1[ ]/<cr>
+nnore <Plug>(simple-todo-mark-as-undone) :execute 's/^\(\s*[-+*]\?\s*\)\[' . g:simple_todo_tick_symbol . ']/\1[ ]/'<cr>
+vnore <Plug>(simple-todo-mark-as-undone) :execute 's/^\(\s*[-+*]\?\s*\)\[' . g:simple_todo_tick_symbol . ']/\1[ ]/'<cr>
+inore <Plug>(simple-todo-mark-as-undone) <Esc>:execute 's/^\(\s*[-+*]\?\s*\)\[' . g:simple_todo_tick_symbol . ']/\1[ ]/'<cr>
 
 " }}}
 " Key bindings {{{
