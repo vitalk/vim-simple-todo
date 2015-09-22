@@ -51,19 +51,19 @@ inore <silent> <Plug>(simple-todo-above) <Esc>O<c-r>=<SID>get_list_marker(line('
 
 " Mark item under cursor as done
 nnore <silent> <Plug>(simple-todo-mark-as-done) :execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:simple_todo_tick_symbol . ']/'<cr>
-      \:call repeat#set("\<Plug>(simple-todo-mark-as-done)")<cr>
+      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-done)")<cr>
 vnore <silent> <Plug>(simple-todo-mark-as-done) :execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:simple_todo_tick_symbol . ']/'<cr>
-      \:call repeat#set("\<Plug>(simple-todo-mark-as-done)")<cr>
+      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-done)")<cr>
 inore <silent> <Plug>(simple-todo-mark-as-done) <Esc>:execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:simple_todo_tick_symbol . ']/'<cr>
-      \:call repeat#set("\<Plug>(simple-todo-mark-as-done)")<cr>
+      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-done)")<cr>
 
 " Mark as undone
 nnore <silent> <Plug>(simple-todo-mark-as-undone) :execute 's/^\(\s*[-+*]\?\s*\)\[' . g:simple_todo_tick_symbol . ']/\1[ ]/'<cr>
-      \:call repeat#set("\<Plug>(simple-todo-mark-as-undone)")<cr>
+      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-undone)")<cr>
 vnore <silent> <Plug>(simple-todo-mark-as-undone) :execute 's/^\(\s*[-+*]\?\s*\)\[' . g:simple_todo_tick_symbol . ']/\1[ ]/'<cr>
-      \:call repeat#set("\<Plug>(simple-todo-mark-as-undone)")<cr>
+      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-undone)")<cr>
 inore <silent> <Plug>(simple-todo-mark-as-undone) <Esc>:execute 's/^\(\s*[-+*]\?\s*\)\[' . g:simple_todo_tick_symbol . ']/\1[ ]/'<cr>
-      \:call repeat#set("\<Plug>(simple-todo-mark-as-undone)")<cr>
+      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-undone)")<cr>
 
 " }}}
 " Key bindings {{{
