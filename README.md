@@ -15,6 +15,9 @@ Plugin supports [GitHub-like task lists](https://github.com/blog/1375-task-lists
 - [x] Support markdown list markers
 + [x] So it's easy to create tasks in issues or pull requests on GitHub
 
+Plugin has built-in integration with [tpope/repeat](https://github.com/tpope/vim-repeat),
+so each mapping is repeatable via <kbd>.</kbd>.
+
 ## Installation
 
 Use your favorite installation method:
