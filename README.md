@@ -12,11 +12,9 @@ mappings for manage simple todo lists (example below) and nothing more.
 
 ## Features
 
-
-- Works well with different markdown list markers, e.g. `-`, `+`, `*`.
-
 - Support [GitHub-like task lists](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments):
 
+  - [x] Works well with different markdown list markers, e.g. `-`, `+`, `*`.
   + [x] So it's easy to create tasks in issues or pull requests on GitHub
 
 - Each mapping is repeatable via <kbd>.</kbd> (require [tpope/repeat](https://github.com/tpope/vim-repeat)).
