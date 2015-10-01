@@ -10,13 +10,24 @@ mappings for manage simple TODO lists (example below) and nothing more.
 [ ] Spread the word
 ```
 
-Plugin supports [GitHub-like task lists](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments) as well.
+## Features
 
-- [x] Support markdown list markers
-+ [x] So it's easy to create tasks in issues or pull requests on GitHub
 
-Plugin has built-in integration with [tpope/repeat](https://github.com/tpope/vim-repeat),
-so each mapping is repeatable via <kbd>.</kbd>.
+- Works well with different markdown list markers, e.g. `-`, `+`, `*`.
+
+- Support [GitHub-like task lists](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments):
+
+  + [x] So it's easy to create tasks in issues or pull requests on GitHub
+
+- Each mapping is repeatable via <kbd>.</kbd> (require [tpope/repeat](https://github.com/tpope/vim-repeat)).
+
+- Tick symbol is configurable, e.g.
+
+  ```
+  [y] Water
+  [y] Bread
+  [ ] Milk
+  ```
 
 ## Installation
 
