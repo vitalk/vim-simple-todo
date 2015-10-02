@@ -33,51 +33,57 @@ endfu " }}}
 " Public API {{{
 
 " Create a new item
-nnore <Plug>(simple-todo-new) i[ ]<space>
-inore <Plug>(simple-todo-new) [ ]<space>
+nnore <silent> <Plug>(simple-todo-new) i[ ]<space>
+inore <silent> <Plug>(simple-todo-new) [ ]<space>
 
 " Create a new item at the start of this line
-inore <Plug>(simple-todo-new-start-of-line) <Esc>mzI<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space><Esc>`z4la
-nnore <Plug>(simple-todo-new-start-of-line) mzI<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space><Esc>`z4l
-vnore <Plug>(simple-todo-new-start-of-line) I<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space>
+inore <silent> <Plug>(simple-todo-new-start-of-line) <Esc>mzI<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space><Esc>`z4la
+nnore <silent> <Plug>(simple-todo-new-start-of-line) mzI<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space><Esc>`z4l
+vnore <silent> <Plug>(simple-todo-new-start-of-line) I<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space>
 
 " Create a new item below
-nnore <Plug>(simple-todo-below) o<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space>
-inore <Plug>(simple-todo-below) <Esc>o<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space>
+nnore <silent> <Plug>(simple-todo-below) o<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space>
+inore <silent> <Plug>(simple-todo-below) <Esc>o<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space>
 
 " Create a new item above
-nnore <Plug>(simple-todo-above) O<c-r>=<SID>get_list_marker(line('.')+1)<cr>[ ]<space>
-inore <Plug>(simple-todo-above) <Esc>O<c-r>=<SID>get_list_marker(line('.')+1)<cr>[ ]<space>
+nnore <silent> <Plug>(simple-todo-above) O<c-r>=<SID>get_list_marker(line('.')+1)<cr>[ ]<space>
+inore <silent> <Plug>(simple-todo-above) <Esc>O<c-r>=<SID>get_list_marker(line('.')+1)<cr>[ ]<space>
 
 " Mark item under cursor as done
-nnore <Plug>(simple-todo-mark-as-done) :execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:simple_todo_tick_symbol . ']/'<cr>
-vnore <Plug>(simple-todo-mark-as-done) :execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:simple_todo_tick_symbol . ']/'<cr>
-inore <Plug>(simple-todo-mark-as-done) <Esc>:execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:simple_todo_tick_symbol . ']/'<cr>
+nnore <silent> <Plug>(simple-todo-mark-as-done) :execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:simple_todo_tick_symbol . ']/'<cr>
+      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-done)")<cr>
+vnore <silent> <Plug>(simple-todo-mark-as-done) :execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:simple_todo_tick_symbol . ']/'<cr>
+      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-done)")<cr>
+inore <silent> <Plug>(simple-todo-mark-as-done) <Esc>:execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:simple_todo_tick_symbol . ']/'<cr>
+      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-done)")<cr>
 
 " Mark as undone
-nnore <Plug>(simple-todo-mark-as-undone) :execute 's/^\(\s*[-+*]\?\s*\)\[' . g:simple_todo_tick_symbol . ']/\1[ ]/'<cr>
-vnore <Plug>(simple-todo-mark-as-undone) :execute 's/^\(\s*[-+*]\?\s*\)\[' . g:simple_todo_tick_symbol . ']/\1[ ]/'<cr>
-inore <Plug>(simple-todo-mark-as-undone) <Esc>:execute 's/^\(\s*[-+*]\?\s*\)\[' . g:simple_todo_tick_symbol . ']/\1[ ]/'<cr>
+nnore <silent> <Plug>(simple-todo-mark-as-undone) :execute 's/^\(\s*[-+*]\?\s*\)\[' . g:simple_todo_tick_symbol . ']/\1[ ]/'<cr>
+      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-undone)")<cr>
+vnore <silent> <Plug>(simple-todo-mark-as-undone) :execute 's/^\(\s*[-+*]\?\s*\)\[' . g:simple_todo_tick_symbol . ']/\1[ ]/'<cr>
+      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-undone)")<cr>
+inore <silent> <Plug>(simple-todo-mark-as-undone) <Esc>:execute 's/^\(\s*[-+*]\?\s*\)\[' . g:simple_todo_tick_symbol . ']/\1[ ]/'<cr>
+      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-undone)")<cr>
 
 " }}}
 " Key bindings {{{
 
 if g:simple_todo_map_keys
-  nmap <silent><Leader>i <Plug>(simple-todo-new)
-  imap <silent><Leader>i <Plug>(simple-todo-new)
-  imap <silent><Leader>I <Plug>(simple-todo-new-start-of-line)
-  nmap <silent><Leader>I <Plug>(simple-todo-new-start-of-line)
-  vmap <silent><Leader>I <Plug>(simple-todo-new-start-of-line)
-  nmap <silent><Leader>o <Plug>(simple-todo-below)
-  imap <silent><Leader>o <Plug>(simple-todo-below)
-  nmap <silent><Leader>O <Plug>(simple-todo-above)
-  imap <silent><Leader>O <Plug>(simple-todo-above)
-  nmap <silent><Leader>x <Plug>(simple-todo-mark-as-done)
-  vmap <silent><Leader>x <Plug>(simple-todo-mark-as-done)
-  imap <silent><Leader>x <Plug>(simple-todo-mark-as-done)
-  nmap <silent><Leader>X <Plug>(simple-todo-mark-as-undone)
-  vmap <silent><Leader>X <Plug>(simple-todo-mark-as-undone)
-  imap <silent><Leader>X <Plug>(simple-todo-mark-as-undone)
+  nmap <Leader>i <Plug>(simple-todo-new)
+  imap <Leader>i <Plug>(simple-todo-new)
+  imap <Leader>I <Plug>(simple-todo-new-start-of-line)
+  nmap <Leader>I <Plug>(simple-todo-new-start-of-line)
+  vmap <Leader>I <Plug>(simple-todo-new-start-of-line)
+  nmap <Leader>o <Plug>(simple-todo-below)
+  imap <Leader>o <Plug>(simple-todo-below)
+  nmap <Leader>O <Plug>(simple-todo-above)
+  imap <Leader>O <Plug>(simple-todo-above)
+  nmap <Leader>x <Plug>(simple-todo-mark-as-done)
+  vmap <Leader>x <Plug>(simple-todo-mark-as-done)
+  imap <Leader>x <Plug>(simple-todo-mark-as-done)
+  nmap <Leader>X <Plug>(simple-todo-mark-as-undone)
+  vmap <Leader>X <Plug>(simple-todo-mark-as-undone)
+  imap <Leader>X <Plug>(simple-todo-mark-as-undone)
 endif
 
 " }}}

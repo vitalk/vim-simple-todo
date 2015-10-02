@@ -1,7 +1,7 @@
-# Simple TODO in Vim
+# Simple todo in Vim
 
 May be this is the smallest Vim plugin in the world. It adds some useful
-mappings for manage simple TODO lists (example below) and nothing more.
+mappings for manage simple todo lists (example below) and nothing more.
 
 ```
 [x] Create plugin
@@ -10,10 +10,22 @@ mappings for manage simple TODO lists (example below) and nothing more.
 [ ] Spread the word
 ```
 
-Plugin supports [GitHub-like task lists](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments) as well.
+## Features
 
-- [x] Support markdown list markers
-+ [x] So it's easy to create tasks in issues or pull requests on GitHub
+- Support [GitHub-like task lists](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments):
+
+  - [x] Works well with different markdown list markers, e.g. `-`, `+`, `*`.
+  + [x] So it's easy to create tasks in issues or pull requests on GitHub
+
+- Each mapping is repeatable via <kbd>.</kbd> (require [tpope/repeat](https://github.com/tpope/vim-repeat)).
+
+- Tick symbol is configurable, e.g.
+
+  ```
+  [y] Water
+  [y] Bread
+  [ ] Milk
+  ```
 
 ## Installation
 
@@ -66,6 +78,7 @@ imap <c-i> <Plug>(simple-todo-new)
 See `:help simple-todo-maps` for list of available <Plug> mappings.
 
 You can also change the tick symbol to something else. Default is `x`.
+
 ```vim
 let g:simple_todo_tick_symbol = 'y'
 ```
