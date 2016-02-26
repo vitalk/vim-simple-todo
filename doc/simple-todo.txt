@@ -59,6 +59,10 @@ let g:simple_todo_map_keys = 0
 <Plug>(simple-todo-mark-as-undone)
 <leader>X                   Mark item under cursor as undone
 
+                                           *<Plug>(simple-todo-new-list-item)*
+<Plug>(simple-todo-new-list-item)
+                            Create a new item with list symbol prefix
+
 ==============================================================================
 3. Customization                                   *simple-todo-customization*
 
@@ -66,6 +70,10 @@ The default tick symbol `x` can be changed by defining:
 
 >
 let g:simple_todo_tick_symbol = 'y'
+
+You may also change the list symbol `-` by defining:
+
+let g:simple_todo_list_symbol = '*'
 <
 
 ==============================================================================
