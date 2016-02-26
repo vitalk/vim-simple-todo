@@ -36,6 +36,10 @@ endfu " }}}
 nnore <silent> <Plug>(simple-todo-new) i[ ]<space>
 inore <silent> <Plug>(simple-todo-new) [ ]<space>
 
+" Create a new item with vaild MarkDown checkbox syntax
+nnore <silent> <Plug>(simple-todo-new-markdown) i- [ ]<space>
+inore <silent> <Plug>(simple-todo-new-markdown) - [ ]<space>
+
 " Create a new item at the start of this line
 inore <silent> <Plug>(simple-todo-new-start-of-line) <Esc>mzI<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space><Esc>`z4la
 nnore <silent> <Plug>(simple-todo-new-start-of-line) mzI<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space><Esc>`z4l
@@ -71,6 +75,8 @@ inore <silent> <Plug>(simple-todo-mark-as-undone) <Esc>:execute 's/^\(\s*[-+*]\?
 if g:simple_todo_map_keys
   nmap <Leader>i <Plug>(simple-todo-new)
   imap <Leader>i <Plug>(simple-todo-new)
+  nmap <Leader>d <Plug>(simple-todo-new-markdown)
+  imap <Leader>d <Plug>(simple-todo-new-markdown)
   imap <Leader>I <Plug>(simple-todo-new-start-of-line)
   nmap <Leader>I <Plug>(simple-todo-new-start-of-line)
   vmap <Leader>I <Plug>(simple-todo-new-start-of-line)
