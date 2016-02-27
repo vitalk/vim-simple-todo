@@ -22,6 +22,10 @@ if !exists('g:simple_todo_tick_symbol')
     let g:simple_todo_tick_symbol = 'x'
 endif
 
+if !exists('g:simple_todo_list_symbol')
+    let g:simple_todo_list_symbol = '-'
+endif
+
 " }}}
 " Private functions {{{
 
@@ -35,6 +39,10 @@ endfu " }}}
 " Create a new item
 nnore <silent> <Plug>(simple-todo-new) i[ ]<space>
 inore <silent> <Plug>(simple-todo-new) [ ]<space>
+
+" Create a new item with some list prefix symbol
+nnore <silent> <Plug>(simple-todo-new-list-item) "=g:simple_todo_list_symbol.' [ ] '<cr>pa
+inore <silent> <Plug>(simple-todo-new-list-item) <Esc>"=g:simple_todo_list_symbol.' [ ] '<cr>pa
 
 " Create a new item at the start of this line
 inore <silent> <Plug>(simple-todo-new-start-of-line) <Esc>mzI<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space><Esc>`z4la
