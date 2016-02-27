@@ -34,7 +34,7 @@ Use your favorite installation method:
 - Tim Pope's [pathogen](https://github.com/tpope/vim-pathogen):
 
   ```sh
-  cd .vim/bundle
+  cd ~/.vim/bundle
   git clone https://github.com/vitalk/vim-simple-todo
   ```
 
