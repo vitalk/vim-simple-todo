@@ -1,6 +1,6 @@
 # Simple todo in Vim
 
-May be this is the smallest Vim plugin in the world. It adds some useful
+Maybe this is the smallest Vim plugin in the world. It adds some useful
 mappings for manage simple todo lists (example below) and nothing more.
 
 ```
