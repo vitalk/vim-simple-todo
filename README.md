@@ -15,7 +15,7 @@ mappings for manage simple todo lists (example below) and nothing more.
 - Support [GitHub-like task lists](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments):
 
   - [x] Works well with different markdown list markers, e.g. `-`, `+`, `*`.
-  + [x] So it's easy to create tasks in issues or pull requests on GitHub
+  + [x] So it’s easy to create tasks in issues or pull requests on GitHub
 
 - Each mapping is repeatable via <kbd>.</kbd> (require [tpope/repeat](https://github.com/tpope/vim-repeat)).
 
@@ -31,14 +31,14 @@ mappings for manage simple todo lists (example below) and nothing more.
 
 Use your favorite installation method:
 
-- Tim Pope's [pathogen](https://github.com/tpope/vim-pathogen):
+- Tim Pope’s [pathogen](https://github.com/tpope/vim-pathogen):
 
   ```sh
   cd ~/.vim/bundle
   git clone https://github.com/vitalk/vim-simple-todo
   ```
 
-- Junegunn Choi's [Plug](https://github.com/junegunn/vim-plug) (recommend):
+- Junegunn Choi’s [Plug](https://github.com/junegunn/vim-plug) (recommend):
 
   ```vim
   Plug 'vitalk/vim-simple-todo'
@@ -85,7 +85,7 @@ let g:simple_todo_tick_symbol = 'y'
 
 ## Issues
 
-Don't hesitate to open [GitHub Issues](https://github.com/vitalk/vim-simple-todo/issues) for any bug or suggestions.
+Don’t hesitate to open [GitHub Issues](https://github.com/vitalk/vim-simple-todo/issues) for any bug or suggestions.
 
 ## Copyright
 

@@ -79,7 +79,7 @@ let g:simple_todo_list_symbol = '*'
 ==============================================================================
 4. Contributing                                          *simple-todo-contrib*
 
-Don't hesitate to create a new GitHub Issue for any bug or suggestion:
+Don’t hesitate to create a new GitHub Issue for any bug or suggestion:
 
 https://github.com/vitalk/vim-simple-todo/issues
 
