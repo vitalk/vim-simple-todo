@@ -18,6 +18,21 @@ if !exists('g:simple_todo_map_keys')
   let g:simple_todo_map_keys = 1
 endif
 
+" Do enable normal mode keys? (yes)
+if !exists('g:simple_todo_map_normal_mode_keys')
+  let g:simple_todo_map_normal_mode_keys = 1
+endif
+
+" Do enable insert mode keys? (yes)
+if !exists('g:simple_todo_map_insert_mode_keys')
+  let g:simple_todo_map_insert_mode_keys = 1
+endif
+
+" Do enable visual mode keys? (yes)
+if !exists('g:simple_todo_map_visual_mode_keys')
+  let g:simple_todo_map_visual_mode_keys = 1
+endif
+
 if !exists('g:simple_todo_tick_symbol')
     let g:simple_todo_tick_symbol = 'x'
 endif
@@ -77,21 +92,29 @@ inore <silent> <Plug>(simple-todo-mark-as-undone) <Esc>:execute 's/^\(\s*[-+*]\?
 " Key bindings {{{
 
 if g:simple_todo_map_keys
-  nmap <Leader>i <Plug>(simple-todo-new)
-  imap <Leader>i <Plug>(simple-todo-new)
-  imap <Leader>I <Plug>(simple-todo-new-start-of-line)
-  nmap <Leader>I <Plug>(simple-todo-new-start-of-line)
-  vmap <Leader>I <Plug>(simple-todo-new-start-of-line)
-  nmap <Leader>o <Plug>(simple-todo-below)
-  imap <Leader>o <Plug>(simple-todo-below)
-  nmap <Leader>O <Plug>(simple-todo-above)
-  imap <Leader>O <Plug>(simple-todo-above)
-  nmap <Leader>x <Plug>(simple-todo-mark-as-done)
-  vmap <Leader>x <Plug>(simple-todo-mark-as-done)
-  imap <Leader>x <Plug>(simple-todo-mark-as-done)
-  nmap <Leader>X <Plug>(simple-todo-mark-as-undone)
-  vmap <Leader>X <Plug>(simple-todo-mark-as-undone)
-  imap <Leader>X <Plug>(simple-todo-mark-as-undone)
+  if g:simple_todo_map_normal_mode_keys
+    nmap <Leader>i <Plug>(simple-todo-new)
+    nmap <Leader>I <Plug>(simple-todo-new-start-of-line)
+    nmap <Leader>o <Plug>(simple-todo-below)
+    nmap <Leader>O <Plug>(simple-todo-above)
+    nmap <Leader>x <Plug>(simple-todo-mark-as-done)
+    nmap <Leader>X <Plug>(simple-todo-mark-as-undone)
+  endif
+
+  if g:simple_todo_map_insert_mode_keys
+    imap <Leader>i <Plug>(simple-todo-new)
+    imap <Leader>I <Plug>(simple-todo-new-start-of-line)
+    imap <Leader>o <Plug>(simple-todo-below)
+    imap <Leader>O <Plug>(simple-todo-above)
+    imap <Leader>X <Plug>(simple-todo-mark-as-undone)
+    imap <Leader>x <Plug>(simple-todo-mark-as-done)
+  endif
+
+  if g:simple_todo_map_visual_mode_keys
+    vmap <Leader>I <Plug>(simple-todo-new-start-of-line)
+    vmap <Leader>X <Plug>(simple-todo-mark-as-undone)
+    vmap <Leader>x <Plug>(simple-todo-mark-as-done)
+  endif
 endif
 
 " }}}
