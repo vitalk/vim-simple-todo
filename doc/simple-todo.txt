@@ -31,9 +31,15 @@ https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments
 Plugin exposes some <Plug> maps. These maps are available for normal, visual
 and insert modes.
 
-To completely disable default key bindings (which is pretty handy) use:
+All default key bindings (which is pretty handy) can be completely disabled
 >
-let g:simple_todo_map_keys = 0
+    let g:simple_todo_map_keys = 0
+<
+or disabled separately for each mode
+>
+    let g:simple_todo_map_normal_mode_keys = 0
+    let g:simple_todo_map_insert_mode_keys = 0
+    let g:simple_todo_map_visual_mode_keys = 0
 <
                                                      *<Plug>(simple-todo-new)*
 <Plug>(simple-todo-new)
@@ -67,15 +73,13 @@ let g:simple_todo_map_keys = 0
 3. Customization                                   *simple-todo-customization*
 
 The default tick symbol `x` can be changed by defining:
-
 >
-let g:simple_todo_tick_symbol = 'y'
-
-You may also change the list symbol `-` by defining:
-
-let g:simple_todo_list_symbol = '*'
+    let g:simple_todo_tick_symbol = 'y'
 <
-
+You may also change the list symbol `-` by defining:
+>
+    let g:simple_todo_list_symbol = '*'
+<
 ==============================================================================
 4. Contributing                                          *simple-todo-contrib*
 
