@@ -104,7 +104,7 @@ function! s:go(type,...) abort
     if strlen(line) > 0
         if a:type == 0 " add [ ]
             if line !~ s:pat_mark_todo && line !~ s:pat_mark_done
-              let line = s:mark_todo . ' ' . line
+              let line = substitute(line,'^\(\s*\)',s:mark_todo.' ','')
             endif
         elseif a:type == 1 " mark done
             if line =~ s:pat_mark_todo
