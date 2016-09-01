@@ -95,15 +95,15 @@ function! s:go(type,...) abort
     let [lnum1, lnum2] = [line("'["), line("']")]
   endif
 
-  let s:mark_todo = '[ ]'
-  let s:mark_done = '[' . g:simple_todo_tick_symbol . ']'
-  let s:pat_mark_todo = '\S*\[ \]'
-  let s:pat_mark_done = '\S*\['. g:simple_todo_tick_symbol .'\]'
+  let s:mark_todo = '\1[ ]'
+  let s:mark_done = '\1[' . g:simple_todo_tick_symbol . ']'
+  let s:pat_mark_todo = '^\(\s*[-+*]\?\s*\)\[ \]'
+  let s:pat_mark_done = '^\(\s*[-+*]\?\s*\)\[' . g:simple_todo_tick_symbol . ']'
   for lnum in range(lnum1,lnum2)
     let line = getline(lnum)
     if strlen(line) > 0
         if a:type == 0 " add [ ]
-            if line !~# s:pat_mark_todo && line !~# s:pat_mark_done
+            if line !~ s:pat_mark_todo && line !~ s:pat_mark_done
               let line = s:mark_todo . ' ' . line
             endif
         elseif a:type == 1 " mark done
@@ -116,7 +116,7 @@ function! s:go(type,...) abort
             endif
         elseif a:type == 3 " switch mark
             if line =~ s:pat_mark_todo
-              let line = substitute(line,s:pat_mark_todo, s:mark_done ,'')
+              let line = substitute(line,s:pat_mark_todo,s:mark_done ,'')
             elseif line =~ s:pat_mark_done
               let line = substitute(line,s:pat_mark_done,s:mark_todo,'')
             endif
