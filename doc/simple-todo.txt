@@ -66,6 +66,10 @@ or disabled separately for each mode
 <leader>X                   Mark item under cursor as undone
 
                                            *<Plug>(simple-todo-new-list-item)*
+<Plug>(simple-todo-mark-switch)
+<leader>s                   Switch todo status for current line
+
+                                             *<Plug>(simple-todo-mark-switch)*
 <Plug>(simple-todo-new-list-item)
                             Create a new item with list symbol prefix
 
