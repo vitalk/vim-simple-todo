@@ -127,11 +127,17 @@ function! s:go(type,...) abort
 endfunction
 
 nnoremap <silent> <Plug>(simple-todo-mark-switch)           :<C-U>call <SID>go(3,line("."),line("."))<CR>
+        \:silent! call repeat#set("\<Plug>(simple-todo-mark-switch)")<cr>
 inoremap <silent> <Plug>(simple-todo-mark-switch)           :<C-U>call <SID>go(3,line("."),line("."))<CR>
+        \:silent! call repeat#set("\<Plug>(simple-todo-mark-switch)")<cr>
 xnoremap <silent> <Plug>(simple-todo-mark-switch)           :<C-U>call <SID>go(3,line("'<"),line("'>"))<CR>
+        \:silent! call repeat#set("\<Plug>(simple-todo-mark-switch)")<cr>
 xnoremap <silent> <Plug>(simple-todo-new-start-of-line)     :<C-U>call <SID>go(0,line("'<"),line("'>"))<CR>
+        \:silent! call repeat#set("\<Plug>(simple-todo-new-start-of-line)")<cr>
 xnoremap <silent> <Plug>(simple-todo-mark-as-done)          :<C-U>call <SID>go(1,line("'<"),line("'>"))<CR>
+        \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-done)")<cr>
 xnoremap <silent> <Plug>(simple-todo-mark-as-undone)        :<C-U>call <SID>go(2,line("'<"),line("'>"))<CR>
+        \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-undone)")<cr>
 
 " }}}
 " Key bindings {{{
