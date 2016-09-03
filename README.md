@@ -15,7 +15,9 @@ mappings for manage simple todo lists (example below) and nothing more.
 - Support [GitHub-like task lists](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments):
 
   - [x] Works well with different markdown list markers, e.g. `-`, `+`, `*`.
-  + [x] So it’s easy to create tasks in issues or pull requests on GitHub
+  + [ ] So it’s easy to create tasks in issues or pull requests on GitHub
+
+- Visually selected tasks can be processed at once.
 
 - Each mapping is repeatable via <kbd>.</kbd> (require [tpope/repeat](https://github.com/tpope/vim-repeat)).
 
@@ -26,9 +28,6 @@ mappings for manage simple todo lists (example below) and nothing more.
   [y] Bread
   [ ] Milk
   ```
-
-- Support processing marks for selected lines, `add todo marks`,
- `change todo status`, `toggle todo status` for visual selected lines
 
 ## Installation
 
@@ -53,8 +52,8 @@ Use your favorite installation method:
 
 ## Usage
 
-All this mappings use the `<leader>` key and they work the same on `NORMAL`
-and `INSERT` modes. I prefer to use [the comma](https://github.com/vitalk/sanevi/blob/master/vimrc#L37)
+All this mappings use the `<leader>` key and they work the same on `NORMAL`,
+`VISUAL` and `INSERT` modes. I prefer to use [the comma](https://github.com/vitalk/sanevi/blob/master/vimrc#L37)
 as the `<leader>` key but fell free to set your own.
 
 | Key           | Help                                   |
