@@ -5,7 +5,7 @@ mappings for manage simple todo lists (example below) and nothing more.
 
 ```
 [x] Create plugin
-[x] Add help documentation
+[x] Add helpful documentation
 [x] Publish to GitHub
 [ ] Spread the word
 ```
