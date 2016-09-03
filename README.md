@@ -27,6 +27,9 @@ mappings for manage simple todo lists (example below) and nothing more.
   [ ] Milk
   ```
 
+- Support processing marks for selected lines, `add todo marks`,
+ `change todo status`, `toggle todo status` for visual selected lines
+
 ## Installation
 
 Use your favorite installation method:
@@ -62,6 +65,7 @@ as the `<leader>` key but fell free to set your own.
 | <kbd>,O</kbd> | Create a new todo above current line   |
 | <kbd>,x</kbd> | Mark todo under cursor as done         |
 | <kbd>,X</kbd> | Mark todo as undone                    |
+| <kbd>,s</kbd> | Switch todo status for current line    |
 
 Or even remap them to somethings more comfortable for you:
 
