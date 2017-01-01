@@ -128,11 +128,11 @@ inore <silent> <Plug>(simple-todo-mark-as-undone) <Esc>:execute 's/^\(\s*[-+*]\?
 
 " Switch marks for visual selected lines
 nnoremap <silent> <Plug>(simple-todo-mark-switch)           :<C-U>call <SID>go(3, line("."), line("."))<cr>
-        \:silent! call repeat#set("\<Plug>(simple-todo-mark-switch)")<cr>:noh<cr>
+        \:silent! call repeat#set("\<Plug>(simple-todo-mark-switch)")<cr>
 inoremap <silent> <Plug>(simple-todo-mark-switch)           <Esc>:<C-U>call <SID>go(3, line("."), line("."))<cr>
-        \:silent! call repeat#set("\<Plug>(simple-todo-mark-switch)")<cr>:noh<cr>
+        \:silent! call repeat#set("\<Plug>(simple-todo-mark-switch)")<cr>
 xnoremap <silent> <Plug>(simple-todo-mark-switch)           :<C-U>call <SID>go(3, line("'<"), line("'>"))<cr>
-        \:silent! call repeat#set("\<Plug>(simple-todo-mark-switch)")<cr>:noh<cr>
+        \:silent! call repeat#set("\<Plug>(simple-todo-mark-switch)")<cr>
 
 " Handle marks for visual selected lines
 xnoremap <silent> <Plug>(simple-todo-new-start-of-line)     :<C-U>call <SID>go(0, line("'<"), line("'>"))<cr>
