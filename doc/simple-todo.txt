@@ -73,6 +73,11 @@ or disabled separately for each mode
 <Plug>(simple-todo-new-list-item)
                             Create a new item with list symbol prefix
 
+                             *<Plug>(simple-todo-new-list-item-start-of-line)*
+<Plug>(simple-todo-new-list-item-start-of-line)
+                            Create a new item with list symbol prefix at the
+                            start of this line
+
 ==============================================================================
 3. Customization                                   *simple-todo-customization*
 
