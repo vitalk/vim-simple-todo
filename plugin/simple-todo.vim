@@ -49,7 +49,7 @@ endif
 "
 " Arguments:
 " - an optional line number used to search list symbol.
-function! s:get_list_marker(...) " {{{
+function! s:list_symbol(...) " {{{
   if a:0
     return substitute(getline(a:1), '^\s*\([-+*]\?\s*\).*', '\1', '')
   else
@@ -103,26 +103,26 @@ nnoremap <silent> <Plug>(simple-todo-new) i[ ]<space>
 inoremap <silent> <Plug>(simple-todo-new) [ ]<space>
 
 " Create a new item with some list prefix symbol
-nnoremap <silent> <Plug>(simple-todo-new-list-item) i<C-R>=<SID>get_list_marker()<CR><space>[ ]<space>a
-inoremap <silent> <Plug>(simple-todo-new-list-item) <C-R>=<SID>get_list_marker()<CR><space>[ ]<space>
+nnoremap <silent> <Plug>(simple-todo-new-list-item) i<C-R>=<SID>list_symbol()<CR><space>[ ]<space>a
+inoremap <silent> <Plug>(simple-todo-new-list-item) <C-R>=<SID>list_symbol()<CR><space>[ ]<space>
 
 " Create a new item at the start of this line
-inoremap <silent> <Plug>(simple-todo-new-start-of-line) <Esc>mzI<C-R>=<SID>get_list_marker(line('.')-1)<CR>[ ]<space><Esc>`z4la
-nnoremap <silent> <Plug>(simple-todo-new-start-of-line) mzI<C-R>=<SID>get_list_marker(line('.')-1)<CR>[ ]<space><Esc>`z4l
-vnoremap <silent> <Plug>(simple-todo-new-start-of-line) I<C-R>=<SID>get_list_marker(line('.')-1)<CR>[ ]<space>
+inoremap <silent> <Plug>(simple-todo-new-start-of-line) <Esc>mzI<C-R>=<SID>list_symbol(line('.')-1)<CR>[ ]<space><Esc>`z4la
+nnoremap <silent> <Plug>(simple-todo-new-start-of-line) mzI<C-R>=<SID>list_symbol(line('.')-1)<CR>[ ]<space><Esc>`z4l
+vnoremap <silent> <Plug>(simple-todo-new-start-of-line) I<C-R>=<SID>list_symbol(line('.')-1)<CR>[ ]<space>
 
 " Create a new item with some list prefix symbol at the start of this line
-nnoremap <silent> <Plug>(simple-todo-new-list-item-start-of-line) mzI<C-R>=<SID>get_list_marker()<CR><space>[ ]<space><Esc>`z6l
-inoremap <silent> <Plug>(simple-todo-new-list-item-start-of-line) <Esc>mzI<C-R>=<SID>get_list_marker()<CR><space>[ ]<space><Esc>`z6la
-vnoremap <silent> <Plug>(simple-todo-new-list-item-start-of-line) I<C-R>=<SID>get_list_marker()<CR><space>[ ]<space>
+nnoremap <silent> <Plug>(simple-todo-new-list-item-start-of-line) mzI<C-R>=<SID>list_symbol()<CR><space>[ ]<space><Esc>`z6l
+inoremap <silent> <Plug>(simple-todo-new-list-item-start-of-line) <Esc>mzI<C-R>=<SID>list_symbol()<CR><space>[ ]<space><Esc>`z6la
+vnoremap <silent> <Plug>(simple-todo-new-list-item-start-of-line) I<C-R>=<SID>list_symbol()<CR><space>[ ]<space>
 
 " Create a new item below
-nnoremap <silent> <Plug>(simple-todo-below) o<C-R>=<SID>get_list_marker(line('.')-1)<CR>[ ]<space>
-inoremap <silent> <Plug>(simple-todo-below) <Esc>o<C-R>=<SID>get_list_marker(line('.')-1)<CR>[ ]<space>
+nnoremap <silent> <Plug>(simple-todo-below) o<C-R>=<SID>list_symbol(line('.')-1)<CR>[ ]<space>
+inoremap <silent> <Plug>(simple-todo-below) <Esc>o<C-R>=<SID>list_symbol(line('.')-1)<CR>[ ]<space>
 
 " Create a new item above
-nnoremap <silent> <Plug>(simple-todo-above) O<C-R>=<SID>get_list_marker(line('.')+1)<CR>[ ]<space>
-inoremap <silent> <Plug>(simple-todo-above) <Esc>O<C-R>=<SID>get_list_marker(line('.')+1)<CR>[ ]<space>
+nnoremap <silent> <Plug>(simple-todo-above) O<C-R>=<SID>list_symbol(line('.')+1)<CR>[ ]<space>
+inoremap <silent> <Plug>(simple-todo-above) <Esc>O<C-R>=<SID>list_symbol(line('.')+1)<CR>[ ]<space>
 
 " Mark item under cursor as done
 nnoremap <silent> <Plug>(simple-todo-mark-as-done) :execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:simple_todo_tick_symbol . ']/'<CR>:noh<CR>
