@@ -105,6 +105,7 @@ vnore <silent> <Plug>(simple-todo-new-start-of-line) I<c-r>=<SID>get_list_marker
 " Create a new item with some list prefix symbol at the start of this line
 nnore <silent> <Plug>(simple-todo-new-list-item-start-of-line) mzI<c-r>=g:simple_todo_list_symbol<cr><space>[ ]<space><Esc>`z6l
 inore <silent> <Plug>(simple-todo-new-list-item-start-of-line) <Esc>mzI<c-r>=g:simple_todo_list_symbol<cr><space>[ ]<space><Esc>`z6la
+vnore <silent> <Plug>(simple-todo-new-list-item-start-of-line) I<c-r>=g:simple_todo_list_symbol<cr><space>[ ]<space>
 
 " Create a new item below
 nnore <silent> <Plug>(simple-todo-below) o<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space>
