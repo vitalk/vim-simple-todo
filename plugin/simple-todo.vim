@@ -46,7 +46,7 @@ endif
 
 function! s:get_list_marker(linenr) " {{{
   return substitute(getline(a:linenr), '^\s*\([-+*]\?\s*\).*', '\1', '')
-endfu " }}}
+endfunction " }}}
 
 function! s:go(type, ...) abort " {{{
   if a:0
@@ -84,7 +84,7 @@ function! s:go(type, ...) abort " {{{
       call setline(lnum, line)
     end
   endfor
-endfu " }}}
+endfunction " }}}
 
 " }}}
 " Public API {{{
