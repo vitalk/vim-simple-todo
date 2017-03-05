@@ -44,8 +44,17 @@ endif
 " }}}
 " Private functions {{{
 
-function! s:get_list_marker(linenr) " {{{
-  return substitute(getline(a:linenr), '^\s*\([-+*]\?\s*\).*', '\1', '')
+" Returns a list symbol found at the line number if is specified and
+" the default symbol otherwise.
+"
+" Arguments:
+" - an optional line number used to search list symbol.
+function! s:list_symbol(...) " {{{
+  if a:0
+    return substitute(getline(a:1), '^\s*\([-+*]\?\s*\).*', '\1', '')
+  else
+    return g:simple_todo_list_symbol
+  endif
 endfunction " }}}
 
 function! s:go(type, ...) abort " {{{
@@ -94,58 +103,58 @@ nnoremap <silent> <Plug>(simple-todo-new) i[ ]<space>
 inoremap <silent> <Plug>(simple-todo-new) [ ]<space>
 
 " Create a new item with some list prefix symbol
-nnoremap <silent> <Plug>(simple-todo-new-list-item) "=g:simple_todo_list_symbol.' [ ] '<cr>pa
-inoremap <silent> <Plug>(simple-todo-new-list-item) <Esc>"=g:simple_todo_list_symbol.' [ ] '<cr>pa
+nnoremap <silent> <Plug>(simple-todo-new-list-item) i<C-R>=<SID>list_symbol()<CR><space>[ ]<space>a
+inoremap <silent> <Plug>(simple-todo-new-list-item) <C-R>=<SID>list_symbol()<CR><space>[ ]<space>
 
 " Create a new item at the start of this line
-inoremap <silent> <Plug>(simple-todo-new-start-of-line) <Esc>mzI<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space><Esc>`z4la
-nnoremap <silent> <Plug>(simple-todo-new-start-of-line) mzI<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space><Esc>`z4l
-vnoremap <silent> <Plug>(simple-todo-new-start-of-line) I<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space>
+inoremap <silent> <Plug>(simple-todo-new-start-of-line) <Esc>mzI<C-R>=<SID>list_symbol(line('.')-1)<CR>[ ]<space><Esc>`z4la
+nnoremap <silent> <Plug>(simple-todo-new-start-of-line) mzI<C-R>=<SID>list_symbol(line('.')-1)<CR>[ ]<space><Esc>`z4l
+vnoremap <silent> <Plug>(simple-todo-new-start-of-line) I<C-R>=<SID>list_symbol(line('.')-1)<CR>[ ]<space>
 
 " Create a new item with some list prefix symbol at the start of this line
-nnoremap <silent> <Plug>(simple-todo-new-list-item-start-of-line) mzI<c-r>=g:simple_todo_list_symbol<cr><space>[ ]<space><Esc>`z6l
-inoremap <silent> <Plug>(simple-todo-new-list-item-start-of-line) <Esc>mzI<c-r>=g:simple_todo_list_symbol<cr><space>[ ]<space><Esc>`z6la
-vnoremap <silent> <Plug>(simple-todo-new-list-item-start-of-line) I<c-r>=g:simple_todo_list_symbol<cr><space>[ ]<space>
+nnoremap <silent> <Plug>(simple-todo-new-list-item-start-of-line) mzI<C-R>=<SID>list_symbol()<CR><space>[ ]<space><Esc>`z6l
+inoremap <silent> <Plug>(simple-todo-new-list-item-start-of-line) <Esc>mzI<C-R>=<SID>list_symbol()<CR><space>[ ]<space><Esc>`z6la
+vnoremap <silent> <Plug>(simple-todo-new-list-item-start-of-line) I<C-R>=<SID>list_symbol()<CR><space>[ ]<space>
 
 " Create a new item below
-nnoremap <silent> <Plug>(simple-todo-below) o<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space>
-inoremap <silent> <Plug>(simple-todo-below) <Esc>o<c-r>=<SID>get_list_marker(line('.')-1)<cr>[ ]<space>
+nnoremap <silent> <Plug>(simple-todo-below) o<C-R>=<SID>list_symbol(line('.')-1)<CR>[ ]<space>
+inoremap <silent> <Plug>(simple-todo-below) <Esc>o<C-R>=<SID>list_symbol(line('.')-1)<CR>[ ]<space>
 
 " Create a new item above
-nnoremap <silent> <Plug>(simple-todo-above) O<c-r>=<SID>get_list_marker(line('.')+1)<cr>[ ]<space>
-inoremap <silent> <Plug>(simple-todo-above) <Esc>O<c-r>=<SID>get_list_marker(line('.')+1)<cr>[ ]<space>
+nnoremap <silent> <Plug>(simple-todo-above) O<C-R>=<SID>list_symbol(line('.')+1)<CR>[ ]<space>
+inoremap <silent> <Plug>(simple-todo-above) <Esc>O<C-R>=<SID>list_symbol(line('.')+1)<CR>[ ]<space>
 
 " Mark item under cursor as done
-nnoremap <silent> <Plug>(simple-todo-mark-as-done) :execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:simple_todo_tick_symbol . ']/'<cr>:noh<cr>
-      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-done)")<cr>
-vnoremap <silent> <Plug>(simple-todo-mark-as-done) :execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:simple_todo_tick_symbol . ']/'<cr>:noh<cr>
-      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-done)")<cr>
-inoremap <silent> <Plug>(simple-todo-mark-as-done) <Esc>:execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:simple_todo_tick_symbol . ']/'<cr>:noh<cr>
-      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-done)")<cr>
+nnoremap <silent> <Plug>(simple-todo-mark-as-done) :execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:simple_todo_tick_symbol . ']/'<CR>:noh<CR>
+      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-done)")<CR>
+vnoremap <silent> <Plug>(simple-todo-mark-as-done) :execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:simple_todo_tick_symbol . ']/'<CR>:noh<CR>
+      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-done)")<CR>
+inoremap <silent> <Plug>(simple-todo-mark-as-done) <Esc>:execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:simple_todo_tick_symbol . ']/'<CR>:noh<CR>
+      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-done)")<CR>
 
 " Mark as undone
-nnoremap <silent> <Plug>(simple-todo-mark-as-undone) :execute 's/^\(\s*[-+*]\?\s*\)\[' . g:simple_todo_tick_symbol . ']/\1[ ]/'<cr>:noh<cr>
-      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-undone)")<cr>
-vnoremap <silent> <Plug>(simple-todo-mark-as-undone) :execute 's/^\(\s*[-+*]\?\s*\)\[' . g:simple_todo_tick_symbol . ']/\1[ ]/'<cr>:noh<cr>
-      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-undone)")<cr>
-inoremap <silent> <Plug>(simple-todo-mark-as-undone) <Esc>:execute 's/^\(\s*[-+*]\?\s*\)\[' . g:simple_todo_tick_symbol . ']/\1[ ]/'<cr>:noh<cr>
-      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-undone)")<cr>
+nnoremap <silent> <Plug>(simple-todo-mark-as-undone) :execute 's/^\(\s*[-+*]\?\s*\)\[' . g:simple_todo_tick_symbol . ']/\1[ ]/'<CR>:noh<CR>
+      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-undone)")<CR>
+vnoremap <silent> <Plug>(simple-todo-mark-as-undone) :execute 's/^\(\s*[-+*]\?\s*\)\[' . g:simple_todo_tick_symbol . ']/\1[ ]/'<CR>:noh<CR>
+      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-undone)")<CR>
+inoremap <silent> <Plug>(simple-todo-mark-as-undone) <Esc>:execute 's/^\(\s*[-+*]\?\s*\)\[' . g:simple_todo_tick_symbol . ']/\1[ ]/'<CR>:noh<CR>
+      \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-undone)")<CR>
 
 " Switch marks for visual selected lines
-nnoremap <silent> <Plug>(simple-todo-mark-switch)           :<C-U>call <SID>go(3, line("."), line("."))<cr>
-        \:silent! call repeat#set("\<Plug>(simple-todo-mark-switch)")<cr>
-inoremap <silent> <Plug>(simple-todo-mark-switch)           <Esc>:<C-U>call <SID>go(3, line("."), line("."))<cr>
-        \:silent! call repeat#set("\<Plug>(simple-todo-mark-switch)")<cr>
-xnoremap <silent> <Plug>(simple-todo-mark-switch)           :<C-U>call <SID>go(3, line("'<"), line("'>"))<cr>
-        \:silent! call repeat#set("\<Plug>(simple-todo-mark-switch)")<cr>
+nnoremap <silent> <Plug>(simple-todo-mark-switch)           :<C-U>call <SID>go(3, line("."), line("."))<CR>
+        \:silent! call repeat#set("\<Plug>(simple-todo-mark-switch)")<CR>
+inoremap <silent> <Plug>(simple-todo-mark-switch)           <Esc>:<C-U>call <SID>go(3, line("."), line("."))<CR>
+        \:silent! call repeat#set("\<Plug>(simple-todo-mark-switch)")<CR>
+xnoremap <silent> <Plug>(simple-todo-mark-switch)           :<C-U>call <SID>go(3, line("'<"), line("'>"))<CR>
+        \:silent! call repeat#set("\<Plug>(simple-todo-mark-switch)")<CR>
 
 " Handle marks for visual selected lines
-xnoremap <silent> <Plug>(simple-todo-new-start-of-line)     :<C-U>call <SID>go(0, line("'<"), line("'>"))<cr>
-        \:silent! call repeat#set("\<Plug>(simple-todo-new-start-of-line)")<cr>
-xnoremap <silent> <Plug>(simple-todo-mark-as-done)          :<C-U>call <SID>go(1, line("'<"), line("'>"))<cr>
-        \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-done)")<cr>
-xnoremap <silent> <Plug>(simple-todo-mark-as-undone)        :<C-U>call <SID>go(2, line("'<"), line("'>"))<cr>
-        \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-undone)")<cr>
+xnoremap <silent> <Plug>(simple-todo-new-start-of-line)     :<C-U>call <SID>go(0, line("'<"), line("'>"))<CR>
+        \:silent! call repeat#set("\<Plug>(simple-todo-new-start-of-line)")<CR>
+xnoremap <silent> <Plug>(simple-todo-mark-as-done)          :<C-U>call <SID>go(1, line("'<"), line("'>"))<CR>
+        \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-done)")<CR>
+xnoremap <silent> <Plug>(simple-todo-mark-as-undone)        :<C-U>call <SID>go(2, line("'<"), line("'>"))<CR>
+        \:silent! call repeat#set("\<Plug>(simple-todo-mark-as-undone)")<CR>
 
 " }}}
 " Key bindings {{{
