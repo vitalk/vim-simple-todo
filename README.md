@@ -53,18 +53,18 @@ Use your favorite installation method:
 ## Usage
 
 All this mappings use the `<leader>` key and they work the same on `NORMAL`,
-`VISUAL` and `INSERT` modes. I prefer to use [the comma](https://github.com/vitalk/sanevi/blob/master/vimrc#L37)
-as the `<leader>` key but fell free to set your own.
+`VISUAL` and `INSERT` modes. The default `<leader>` is backslash (`\`), but I prefer to use the comma
+as the `<leader>` key but [feel free to set your own](https://github.com/vitalk/sanevi/blob/master/plugin/00_essential.vim#L38-L39).
 
 | Key           | Help                                   |
 |:--------------|:---------------------------------------|
-| <kbd>,i</kbd> | Create a new todo under cursor         |
-| <kbd>,I</kbd> | Create a new todo for current line     |
-| <kbd>,o</kbd> | Create a new todo below current line   |
-| <kbd>,O</kbd> | Create a new todo above current line   |
-| <kbd>,x</kbd> | Mark todo under cursor as done         |
-| <kbd>,X</kbd> | Mark todo as undone                    |
-| <kbd>,s</kbd> | Switch todo status for current line    |
+| <kbd>`<leader>`i</kbd> | Create a new todo under cursor         |
+| <kbd>`<leader>`I</kbd> | Create a new todo for current line     |
+| <kbd>`<leader>`o</kbd> | Create a new todo below current line   |
+| <kbd>`<leader>`O</kbd> | Create a new todo above current line   |
+| <kbd>`<leader>`x</kbd> | Mark todo under cursor as done         |
+| <kbd>`<leader>`X</kbd> | Mark todo as undone                    |
+| <kbd>`<leader>`s</kbd> | Switch todo status for current line    |
 
 Or even remap them to somethings more comfortable for you:
 
