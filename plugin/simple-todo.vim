@@ -103,7 +103,7 @@ nnoremap <silent> <Plug>(simple-todo-new) i[ ]<space>
 inoremap <silent> <Plug>(simple-todo-new) [ ]<space>
 
 " Create a new item with some list prefix symbol
-nnoremap <silent> <Plug>(simple-todo-new-list-item) i<C-R>=<SID>list_symbol()<CR><space>[ ]<space>a
+nnoremap <silent> <Plug>(simple-todo-new-list-item) i<C-R>=<SID>list_symbol()<CR><space>[ ]<space>
 inoremap <silent> <Plug>(simple-todo-new-list-item) <C-R>=<SID>list_symbol()<CR><space>[ ]<space>
 
 " Create a new item at the start of this line
